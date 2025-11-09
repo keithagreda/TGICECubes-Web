@@ -11,8 +11,8 @@ const Hero = () => {
           <Image
             src="/ice.webp"
             alt='ice'
-            width={225}
-            height={225}
+            width={275}
+            height={275}
           />
           <div className={styles.opHoursCtr}>
             <div className={styles.openingHoursBadge}>
