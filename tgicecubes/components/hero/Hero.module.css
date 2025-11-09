@@ -1,0 +1,82 @@
+.heroBg {
+    background-color: var(--cream);
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero{
+    font-weight: 900;
+    color: var(--primary);
+    text-align: center;
+    position: relative;
+}
+
+.hero h1{
+    font-family: var(--font-inter);
+    font-size: 3.25rem;
+    letter-spacing: 0.79px;
+    z-index: -1;
+}
+
+.hero h2{
+    font-family: var(--font-poppins);
+    font-size: 1.5rem;
+    position: relative; /* Add this */
+    z-index: 10; /* Add this - higher number means in front */
+}
+
+.hero h3{
+    font-family: var(--font-poppins);
+    font-size: .5rem;
+    position: relative; /* Add this */
+    z-index: 10; /* Add this - higher number means in front */
+}
+
+.heroImage{
+    position: relative;
+    width: 300px;
+    height: 100px;
+    margin: 0 auto; /* Center the container */
+}
+
+.heroImage img{
+    z-index: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-55%, -50%); 
+    animation: float 3s ease-in-out infinite;
+}
+
+.openingHoursBadge{
+    border: solid .5px var(--primary);
+    border-radius: 50%;
+    width: 60px;
+    height: 55px;
+    margin: 0 auto;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transform: rotate(-15deg);
+}
+
+.opHoursCtr{
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-215%, 10%);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(-50%, -50%);
+    }
+    50% {
+        transform: translate(-50%, -52%); /* Floats up */
+    }
+}

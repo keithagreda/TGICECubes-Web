@@ -1,0 +1,17 @@
+.navContainer{
+    width: 100%;
+    /* border: solid 1px orange; */
+    padding: 1rem;
+    background-color: var(--cream);
+    display: flex;
+    justify-content: space-between;
+}
+
+.outline {
+    /* outline: .5px solid black; */
+}
+
+.hamburgerContainer{
+    display: flex;
+    align-items: center;
+}
