@@ -1,35 +1,141 @@
 @import "tailwindcss";
 
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-inter: var(--font-inter);
+    --font-poppins: var(--font-poppins);
+
+    --color-brand-dark: var(--brand-dark);
+    --color-brand-primary: var(--brand-primary);
+    --color-brand-accent: var(--brand-accent);
+    --color-brand-light: var(--brand-light);
+
+    --animate-infinite-scroll: infinite-scroll 60s linear infinite;
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes shimmer {
+        from {
+            background-position: 0 0;
+        }
+
+        to {
+            background-position: -200% 0;
+        }
+    }
+
+    @keyframes infinite-scroll {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-100%);
+        }
+    }
+
+    @keyframes breathing {
+
+        0%,
+        100% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.03);
+        }
+    }
+
+    --animate-breathing: breathing 12s ease-in-out infinite;
+}
+
 :root {
-  --background: #f6f4f0;
-  --foreground: #171717;
-  --cream: #f6f4f0;
-  --primary: #020e77;
-  --text-color-inv: white;
+    /* Light Mode (User Requested) */
+    --background: #f2f3f8;
+    --foreground: #000e77;
+
+    --brand-dark: #000e77;
+    --brand-primary: #000e77;
+    --brand-accent: #83b9ff;
+    --brand-light: #ffffff;
 }
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.dark {
+    /* Dark Mode (Previous Design) */
+    --background: #0b1138;
+    --foreground: #f8fafc;
+
+    --brand-dark: #0b1138;
+    --brand-primary: #0044cc;
+    --brand-accent: #38bdf8;
+    --brand-light: #e0f2fe;
 }
 
-/* @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-} */
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
+html {
+    scroll-behavior: smooth;
+}
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-inter), sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-poppins), sans-serif;
+    letter-spacing: -0.02em;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, #000e77 0%, #83b9ff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dark .text-gradient {
+    background: linear-gradient(135deg, #fff 0%, #bae6fd 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 14, 119, 0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.dark .glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+}
+
+.bg-dot-pattern {
+    background-image: radial-gradient(#000e77 2px, transparent 2px);
+    background-size: 24px 24px;
 }
