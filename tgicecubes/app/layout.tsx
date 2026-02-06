@@ -19,6 +19,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "TG Ice Cubes - Premium Purified Ice in Gensan",
   description: "Crystal clear, 9-stage purified ice cubes delivered in General Santos City. Perfect for events, coffee shops, and daily use.",
+  icons: {
+    icon: "/TG_ICE_CUBES_4.svg",
+  },
 };
 
 export default function RootLayout({
