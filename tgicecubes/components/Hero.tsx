@@ -7,7 +7,7 @@ export default function Hero() {
         <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-brand-light dark:bg-slate-950 pt-32 pb-12 md:pt-20 md:pb-0 transition-colors duration-300">
             {/* Background Gradient/Effects */}
             <div className="absolute inset-0 z-0">
-                <div className="absolute inset-0 bg-dot-pattern opacity-50 dark:opacity-25 [mask-image:radial-gradient(ellipse_at_center,transparent_40%,black_100%)] pointer-events-none" />
+                <div className="absolute inset-0 bg-dot-pattern opacity-20 dark:opacity-10 [mask-image:radial-gradient(ellipse_at_center,transparent_25%,black_100%)] pointer-events-none" />
                 <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-brand-accent/20 dark:bg-sky-600/20 rounded-full blur-[120px] animate-pulse" />
                 <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-brand-primary/10 dark:bg-indigo-600/10 rounded-full blur-[100px]" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0)_0%,rgba(255,255,255,0.8)_100%)] dark:bg-[radial-gradient(circle_at_50%_50%,rgba(2,6,23,0)_0%,rgba(2,6,23,0.8)_100%)]" />

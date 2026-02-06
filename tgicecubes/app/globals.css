@@ -136,6 +136,6 @@ h6 {
 }
 
 .bg-dot-pattern {
-    background-image: radial-gradient(#000e77 2px, transparent 2px);
+    background-image: radial-gradient(#000e77 1.2px, transparent 1.2px);
     background-size: 24px 24px;
 }
